@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header class="header">
+      twitterclone
+    </header>
+    <content class="content">
+    <h2>つぶやき一覧</h2>
+    <table>
+      <tr>
+        <th>Content</th>
+      </tr>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.content %></td>
+      <% end %>
+    </table>
+    </content>
+    <footer class="footer">
+    </footer>
+  </body>
+</html>
