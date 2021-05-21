@@ -19,6 +19,13 @@ class PostsController < ApplicationController
   end
   def edit
   end
+  def update
+    if @post.update(post_params)
+      redirect_to posts_path,notice: "つぶやきが編集されました！"
+    else
+      render :edit
+    end
+  end
   private
   def post_params
     params.require(:post).permit(:content)
