@@ -8,23 +8,23 @@
     <header class="header">
       <img src="/assets/Icon awesome-twitter.png" class="icon_image"><img src="/assets/logo.png" class="logo_image">
     </header>
-    <%= link_to '新しくつぶやきを投稿する', new_post_path %>
-    <content class="content">
-    <h2>つぶやき一覧</h2>
-    <p><%= notice %></p>
-    <table>
-      <tr>
-        <th>Content</th>
-      </tr>
-      <% @posts.each do |post| %>
-        <tr>
-          <td><%= post.content %></td>
-          <td><%= link_to '詳細', post_path(post.id) %></td>
-          <td><%= link_to '編集', edit_post_path(post.id) %></td>
-          <td><%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %>
-      <% end %>
-    </table>
-    </content>
+    <p class="tweet_btn"><%= link_to '新しくつぶやきを投稿する', new_post_path %><p>
+      <content class="content">
+        <h2>つぶやき一覧</h2>
+        <p><%= notice %></p>
+        <table>
+          <tr>
+            <th>Content</th>
+          </tr>
+          <% @posts.each do |post| %>
+            <tr>
+              <td><%= post.content %></td>
+              <td><%= link_to '詳細', post_path(post.id) %></td>
+              <td><%= link_to '編集', edit_post_path(post.id) %></td>
+              <td><%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %>
+          <% end %>
+        </table>
+      </content>
     <footer class="footer">
       <p>© footer inc.</p>
     </footer>
