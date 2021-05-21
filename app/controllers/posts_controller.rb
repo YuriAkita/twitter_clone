@@ -30,6 +30,10 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path,notice: "つぶやきが削除されました！"
   end
+  def confirm
+    @post = Post.new(post_params)
+    render :new
+  end
   private
   def post_params
     params.require(:post).permit(:content)
