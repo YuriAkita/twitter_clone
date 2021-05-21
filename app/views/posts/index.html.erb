@@ -5,28 +5,31 @@
     <title></title>
   </head>
   <body>
+    <div class="footerFixed">
     <header class="header">
       <img src="/assets/Icon awesome-twitter.png" class="icon_image"><img src="/assets/logo.png" class="logo_image">
     </header>
-    <p class="tweet_btn"><%= link_to '新しくつぶやきを投稿する', new_post_path %><p>
-      <content class="content">
-        <h2>つぶやき一覧</h2>
+    <img src="/assets/mountain.png" class="image-area">
+    <content class="content">
+      <span><%= link_to '新しくつぶやきを投稿する', new_post_path, class:"tweet-btn" %></span>
         <p><%= notice %></p>
         <table>
           <tr>
-            <th>Content</th>
+            <th>ALL CONTENT.</th>
           </tr>
           <% @posts.each do |post| %>
             <tr>
               <td><%= post.content %></td>
-              <td><%= link_to '詳細', post_path(post.id) %></td>
-              <td><%= link_to '編集', edit_post_path(post.id) %></td>
-              <td><%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %>
+              <td class=""><%= link_to '詳細', post_path(post.id),class:"btn" %></td>
+              <td><%= link_to '編集', edit_post_path(post.id),class:"btn" %></td>
+              <td><%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に編集していいですか？' },class:"btn" %></td>
+            </tr>
           <% end %>
         </table>
       </content>
-    <footer class="footer">
-      <p>© footer inc.</p>
-    </footer>
+      <footer class="footer">
+        <p>© footer inc.</p>
+      </footer>
+      </div>
   </body>
 </html>
