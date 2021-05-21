@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <article class="content">
+    <%= form_with(model: @post,local: true) do |form| %>
+    <div class="post_content">
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+      </div>
+    <%= form.submit %>
+    <% end %>
+    <%= link_to 'ブログ一覧画面に戻る', posts_path %>
+    </article>
+  </body>
+</html>
